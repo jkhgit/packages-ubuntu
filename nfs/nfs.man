@@ -1,0 +1,30 @@
+Network file system: nfs
+
+1. NFS server
+
+# package install
+$ sudo apt install nfs-kernel-server
+
+# server conf.
+$ sudo vi /etc/exports # fromat> server-dir-path clinet-ip/subnet(options) client-ip(options) ...
+
+e.g.
+/mnt/Share/Picture 192.168.0.75/24(rw,root_squash,no_subtree_check)
+
+# restart nfs
+$ sudo systemctl restart nfs-server
+
+
+2. NFS client
+
+# package install
+$ sudo apt install nfs-common
+
+# mount server dir (check)
+$ sudo mount -t nfs {server ip}:/mnt/Share/Picture /mnt/local
+
+# clinet conf.
+$ sudo vi /etc/fstab # format> server-ip:dir-path client-dir-path nfs options
+
+e.g.
+192.168.0.2:/mnt/Share/Picture /mnt/local nfs noauto,user 0 0

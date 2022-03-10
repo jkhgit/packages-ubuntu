@@ -1,0 +1,13 @@
+/* mount multi partition */
+
+# create loop device
+$ sudo losetup -a
+$ sudo losetup -v -f ./{img file} # create /dev/{loop}. delete: sudo losetup -d /dev/{loop}
+
+# add partition in loop dev (img has multi partition!)
+$ sudo partx -v --add /dev/{loop}
+
+# mount & use
+$ mkdir ./{new dir} # "mnt"
+$ sudo mount /dev/{loop*p*} {new dir} # "mnt"
+$ cd {new dir}

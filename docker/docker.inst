@@ -1,0 +1,18 @@
+# install
+# docker.com
+# developer -> docs -> download & install
+
+# check docker image list
+$ sudo docker images # remove: $ sudo docker rmi {image's name}:TAG
+
+# pull image
+
+#             pull         run
+# docker hub -----> image -----> container
+#
+
+# hub.docker.com -> explore -> containers -> categories (official image)
+# docker.com -> docs -> reference -> Docker CLI -> docker pull
+
+$ docker pull [OPTIONS] NAME[:TAG|@DIGEST] # ex $ docker pull httpd
+$ docker images # check pulled images

@@ -1,0 +1,12 @@
+# open file
+:e {file}
+
+# syntax indent all
+:argdo normal gg=G
+
+# replace word all
+:%s/{prev}/{next}/g
+
+# vim diff
+:diffs {file}
+:vert diffs {file}

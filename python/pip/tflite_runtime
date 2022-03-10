@@ -1,0 +1,2 @@
+# https://www.tensorflow.org/lite/guide/python?hl=ko
+$ pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp38-cp38-linux_aarch64.whl

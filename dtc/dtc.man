@@ -1,0 +1,5 @@
+# dts -> dtb
+$ dtc -I dts -O dtb target.dts -o target.dtb
+
+# dtb -> dts
+$ dtc -I dtb -O dts target.dtb -o target.dts

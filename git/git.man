@@ -1,0 +1,63 @@
+# create file
+$ git touch {file}
+
+# create branch
+$ git branch {branch name}
+
+# checkout
+$ git checkout {branch} # select branch
+
+# commit
+$ git commit
+
+# change commit editor
+$ vi ~/.gitconfig
+add
+////////////////////
+[core]
+	editor={editor}
+////////////////////
+
+# amend
+$ git commit --amend # change current commit message
+
+# rollback
+$ git restore {option} {file} # stage -> origin
+$ git reset {option} HEAD~n # commit cancel (n: the number of commit)
+
+# push - (local -> remote)
+$ git push {option} {remote name} {branch}
+
+# merge
+$ git merge {branch} # {cur branch} <--- {branch}
+
+[example] # main <--- hotfix
+$ git checkout main
+$ git merge hotfix
+
+# rebase
+$ git rebase {branch} # {cur branch} ---> {branch}
+
+[example] # main <--- hotfix
+$ git checkout hotfix
+$ git rebase main
+
+# squash (=> depress commit)
+$ git rebase -i HEAD~n (n: the number of commit)
+pick commit 1
+pick commit 2
+...
+pick -> squash, save
+
+# fetch
+$ git fetch {remote name} {branch} # downloaded as "FETCH_HEAD" (not merged local)
+
+# pull
+$ git pull {remote name} {branch} # git merge local
+
+# cherry-pick
+$ git cherry-pick {commit-hash} # select and apply specific commit on my local
+
+# stash
+$ git stash # modified files push stash stack...
+$ git stash pop # pop stack of stash

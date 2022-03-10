@@ -1,0 +1,6 @@
+# install
+$ sudo apt install git
+
+# config user name, e-mail
+$ git config --global user.name "user name" # ~/.gitconfig
+$ git config --global user.email "user e-mail" # ~/.gitconfig

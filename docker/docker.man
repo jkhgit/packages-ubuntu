@@ -1,0 +1,34 @@
+# run container
+$ docker run [OPTION] IMAGE [COMMAND] [ARG...]
+
+# network
+$ docker run -p 80:80 httpd # connect Host:80 - Container:80 (80 to 80 port fowarding)
+$ docker run --name ws3 -p 8081:80 httpd # httpd: pulled image
+
+# command in container
+$ docker exec {container's name} pwd # once
+$ docker exec -it {container's name} /bin/sh or /bin/bash # always
+
+# connect Host's & container's file system
+# modify in Host, run in container
+$ docker run -p 8888:80 -v {Host's file path} httpd
+
+[example]
+
+Host OS: ubuntu 20.04 LTS
+
+plan: [OS: ubuntu 18.04 LTS python:3.5 ... "rknn-toolkit2" build]
+
+# 1. install docker
+$ sudo apt-get remove docker docker-ce docker-ce-cli containerd.io # step by step (manual)
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+# 2. pull ubuntu 18.04 LTS
+$ sudo docker pull ubuntu:18.04
+$ sudo docker images # check installed
+
+# 3. create containers
+$ sudo docker create -i -t --name rknn-toolkit2 ubuntu:18.04 /bin/bash
+$ sudo docker start rknn-toolkit2
+$ sudo docker ps # check created container
+$ sudo attach rknn-toolkit2

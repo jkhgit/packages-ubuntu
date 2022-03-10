@@ -1,0 +1,32 @@
+# install
+$ sudo apt install python # version 2
+$ sudo apt install python3 # version 3
+
+# install specific version : use repository
+$ sudo apt-get update
+$ sudo add-apt-repository ppa:deadsnakes/ppa # delete: $ sudo add-apt-repository --remove {repo's name}
+$ sudo apt-get update
+$ sudo apt install python{version} # ex) $ sudo apt install python3.6
+
+# manage python versions - config install
+[example]
+$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2
+
+# modify python versions (python2 vs python3)
+$ sudo update-altervative --config python # check python list
+$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1 # change priority 1
+$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2 # change priority 2
+
+# modify python versions (python3.x vs python3.y)
+-> use virtualenv
+$ which python # /usr/bin/python or other
+$ ls /usr/bin/ | grep python # check installed python version
+$ sudo apt install pip3
+$ sudo pip3 install virtualenv
+$ virtualenv {venv's name} {OPTIONS} # make virtualenv(venv)
+
+[example] # $ virtualenv {venv's name} --system-site-package (inherited Packages by Host system)
+$ virtualenv tsflow --python=python3.6 # use python3.6, python3.6 installed your device before.
+$ source {venv's name}/bin/activate # activate venv
+$ deactivate # deactivate venv
