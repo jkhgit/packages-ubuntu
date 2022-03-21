@@ -1,0 +1,10 @@
+# Management Partition Table
+
+$ sudo fdisk /dev/{disk} # e.g. sudo fdisk /dev/sda
+
+# In fdisk
+Command (m for help):
+	p: print partitions
+	n: add new partition # if you want change format, select 't' '82' after 'n'
+	w: save
+	q: exit without save
