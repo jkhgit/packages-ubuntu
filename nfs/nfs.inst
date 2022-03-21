@@ -1,0 +1,7 @@
+# server
+$ sudo apt update
+$ sudo apt install nfs-server # systemctl: /etc/exports
+
+# client
+$ sudo apt update
+$ sudo apt install nfs-common
