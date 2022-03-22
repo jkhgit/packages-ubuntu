@@ -1,0 +1,10 @@
+config:
+	based on <https://github.com/jkhgit/ubuntu>
+
+# vi
+:cs add cscope.out
+
+# commands
+(Ctrl + \) + g = search "this function's definition"
+(Ctrl + \) + c = search "where is call this func"
+(Ctrl + \) + d = search "it calls funcs"
